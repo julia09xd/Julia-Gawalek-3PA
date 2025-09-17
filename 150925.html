@@ -19,8 +19,8 @@
      Liczba Kopii: 
      <input type="number" id="l_kopii"></input> <br> <br>
       
-     <input type="radio" name="1" id="papier" value="1.5">Papier błyszczący</input>
-     <input type="radio" name="1" id="papier" value="2">Papier matowy</input> <br> <br>
+     <input type="radio" name="1" id="papier_blyszczacy" value="1.5">Papier błyszczący</input>
+     <input type="radio" name="1" id="papier_matowy" value="2">Papier matowy</input> <br> <br>
 
      <button id="dodaj">Dodaj do koszyka</button>
 
@@ -28,14 +28,7 @@
      <div id="koszyk">
           <h1>Koszyk</h1>
 
-     </div>
-
-
-   
-     
-
-
-          
+     </div>    
      <script>
           const dodaj = document.querySelector("#dodaj");
           const koszyk = document.querySelector("#koszyk");
@@ -46,6 +39,19 @@
                );
                document.querySelector("#koszyk").appendChild(photo);
 
+               let cena_szt = document.querySelector("input[name = '1']:checked").value;
+
+               let l_kopii = document.querySelector("#l_kopii").value;
+               cena = cena_szt*l_kopii;
+
+               let l_kopii_p = document.createElement("p");
+               l_kopii_p.innerHTML = "liczba kopii: " + l_kopii;
+               document.querySelector("#koszyk").appendChild(l_kopii_p);
+
+               let cena_p = document.createElement("p");
+               cena_p.innerHTML = "cena: " + cena;
+               document.querySelector("#koszyk").appendChild(cena_p);
+               
           })
      </script>
 </body>
