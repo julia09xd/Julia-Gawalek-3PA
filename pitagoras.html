@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    a: <input type="number" id="a">
+    b: <input type="number" id="b">
+    <button onclick="btn()">ok</button>
+    <p id="paragraf"></p>
+
+    <script>
+        function btn(){
+            let a = parseInt(document.querySelector("#a").value);
+            let b = parseInt(document.querySelector("#b").value);
+            let potega_a = Math.pow(a, 2);
+            let potega_b = Math.pow(b, 2);
+            let obie_potegi = potega_a + potega_b;
+            let c = Math.sqrt(obie_potegi);
+            document.querySelector("#paragraf").innerHTML = c;
+        }
+    </script>
+</body>
+</html>

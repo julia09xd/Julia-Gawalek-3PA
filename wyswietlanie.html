@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="l1">
+    <input type="number" id="l2">
+    <button id="btn" onclick="btn()"></button>
+    <p id="paragraf"></p>
+    <script>
+        function btn(){
+            let l1 = parseInt(document.querySelector("#l1").value);
+            let l2 = parseInt(document.querySelector("#l2").value);
+            let suma = l1 + l2;
+
+            alert(suma);
+            console.log(suma);
+            document.write(suma);
+            const p = document.querySelector("#paragraf");
+            p.innerHTML = suma;
+        }
+    </script>
+</body>
+</html>
