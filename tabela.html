@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td{
+            border: 2px solid black;
+            border-collapse: collapse;
+
+            cursor: pointer;
+        }
+        td{
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td id="t1" class="t"></td>
+            <td id="t2" class="t"></td>
+            <td id="t3" class="t"></td>
+            <td id="t4" class="t"></td>
+            <td id="t5" class="t"></td>
+        </tr>
+        <tr>
+            <td id="t6" class="t"></td>
+            <td id="t7" class="t"></td>
+            <td id="t8" class="t"></td>
+            <td id="t9" class="t"></td>
+            <td id="t10" class="t"></td>
+        </tr>
+        <tr>
+            <td id="t11" class="t"></td>
+            <td id="t12" class="t"></td>
+            <td id="t13" class="t"></td>
+            <td id="t14" class="t"></td>
+            <td id="t15" class="t"></td>
+        </tr>
+        <tr>
+            <td id="t16" class="t"></td>
+            <td id="t17" class="t"></td>
+            <td id="t18" class="t"></td>
+            <td id="t19" class="t"></td>
+            <td id="t20" class="t"></td>
+        </tr>
+        <tr>
+            <td id="t21" class="t"></td>
+            <td id="t22" class="t"></td>
+            <td id="t23" class="t"></td>
+            <td id="t24" class="t"></td>
+            <td id="t25" class="t"></td>
+        </tr>
+    </table>
+    color: <input type="text" id="color">
+        <button id="btn">ok</button>
+
+    <script>
+        let btn = document.querySelector("#btn");
+            const tds = document.querySelectorAll("td");
+            let color = "white";
+        btn.addEventListener("click", function(){
+         color = document.querySelector("#color").value;
+          
+        tds.forEach(td => {
+            console.log(td.style.backgroundColor)
+            td.addEventListener("click", function(){
+                if(this.style.backgroundColor == ""){
+                    this.style.backgroundColor = color;
+                }else{
+                    this.style.backgroundColor = "";
+                }
+            }) 
+        })
+        })
+    </script>
+</body>
+</html>
