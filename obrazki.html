@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efekty obrazu</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header></header>
+    <img src="pszczola.jpg" alt="" id="pszczola">
+    <input type="radio" name="radio" id="r1"> blur
+    <input type="radio" name="radio" id="r2"> sepia
+    <input type="radio" name="radio" id="r3"> negatyw
+    <button id="zastosuj_img1">zastosuj</button>
+
+    <img src="pomarancza.jpg" alt="" id="pomarancza">
+    <button id="kolorowy">kolorowy</button>
+    <button id="czarnobialy">czarno-biały</button>
+
+    <img src="owoce.jpg" alt="" id="owoce">
+    <input type="range" min="0" max="100" value="100" id="owoce_suwak">
+    <button id="owoce_btn">zastosuj</button>
+
+    <img src="zolw.jpg" alt="" id="zolw">
+    <input type="range" min="0" max="250" value="250" id="zolw_suwak">
+    <button id="zolw_btn">zastosuj</button>
+    <footer></footer>
+    <script>
+        let pszczola_img = document.querySelector("#pszczola");
+        let zastosuj_img1 = document.querySelector("#zastosuj_img1");
+        zastosuj_img1.addEventListener("click", function(){          
+            let r1 = document.querySelector("#r1").checked;
+            let r2 = document.querySelector("#r2").checked;
+            let r3 = document.querySelector("#r3").checked;
+
+            if(r1==true){
+                pszczola_img.style = "filter: blur(8px)";
+            }else if(r2==true){
+                pszczola_img.style = "filter: sepia(100%)";
+            }else if(r3==true){
+                pszczola_img.style = "filter: invert(100%)";
+            }
+        })
+
+        document.querySelector("#kolorowy").addEventListener("click", function(){
+            document.querySelector("#pomarancza").style = "filter: none";
+        })
+
+        document.querySelector("#czarnobialy").addEventListener("click", function(){
+            document.querySelector("#pomarancza").style = "filter: grayscale(100%)";
+        })
+
+        document.querySelector("#owoce_btn").addEventListener("click", function(){
+            let owoce_suwak = document.querySelector("#owoce_suwak").value
+            document.querySelector("#owoce").style = "opacity: "+owoce_suwak +"%";
+
+        })
+        
+        document.querySelector("#zolw_btn").addEventListener("click", function(){
+            let zolw_suwak = document.querySelector("#zolw_suwak").value
+            document.querySelector("#zolw").style = "opacity: "+zolw_suwak +"%";
+
+        })
+    </script>
+</body>
+</html>
